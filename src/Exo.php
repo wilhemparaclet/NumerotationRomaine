@@ -1,34 +1,33 @@
 <?php declare(strict_types=1);
 
-class Exo
-{
-    public function decimalToRoman($decimal){
-        $decimal = 0;
-        if ($decimal > 0) {
-            $decicmal_array = array(
-                1000 => 'M',
-                900 => 'CM',
-                500 => 'D',
-                100 => 'C',
-                90 => 'XC',
-                50 => 'L',
-                40 => 'XL',
-                10 => 'X',
-                9 => 'IX',
-                5 => 'V',
-                4 => 'IV',
-                1 => 'I',
-            );
-            $roman_num = '';
-            foreach ($decicmal_array as $int => $roman) {
-                while ($decimal >= $int) {
-                    $roman_num .= $roman;
-                    $decimal = $decimal - $int;
-                }
+class Exo {
+
+    public function decimalToRoman($result){
+        $romans = array(
+            'M' => 1000,
+            'CM' => 900,
+            'D' => 500,
+            'CD' => 400,
+            'C' => 100,
+            'XC' => 90,
+            'L' => 50,
+            'XL' => 40,
+            'X' => 10,
+            'IX' => 9,
+            'V' => 5,
+            'IV' => 4,
+            'I' => 1,
+        );
+        
+        $roman = 'MMMCMXCIX';
+        $result = 0;
+        
+        foreach ($romans as $key => $value) {
+            while (strpos($roman, $key) === 0) {
+                $result += $value;
+                $roman = substr($roman, strlen($key));
             }
-        } else {
-            throw new \InvalidArgumentException("Value MUST BE greater than 0");
         }
-        return $roman_num;
+        echo $result;
     }
 }

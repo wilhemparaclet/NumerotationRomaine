@@ -6,6 +6,6 @@ class ExoTest extends TestCase
 {
     public function testOne()
     {
-        $this->assertEquals([],Exo::decimalToRoman(1), "c'est un nombre romain");
+        $this->assertEquals([],Exo::decimalToRoman(1);
     }
 }
