@@ -3,7 +3,7 @@
 class Exo
 {
     //Exo2 partie 1
-    public function decimalToRoman($roman_num){
+    public function decimalToRoman($num){
         $decimal = 0;
         while($decimal > 0) {
             $roman_array = array(
@@ -20,14 +20,14 @@ class Exo
                 4 => 'IV',
                 1 => 'I',
             );
-            $roman_num = '';
-            foreach ($roman_array as $nb=> $roman) {
-                if($decimal >= $roman) {
-                    $roman_num .= $roman;
-                    $decimal = $decimal - $int;
+            $num = '';
+            foreach ($roman_array as $nb=> $decimalromain) {
+                if($decimal >= $decimalromain) {
+                    $roman_num .= $decimalromai;
+                    $decimal = $decimal + $nb;
                 }
             }
         }
-        return $roman_num;
+        return $num;
     }
 }
