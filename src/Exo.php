@@ -21,9 +21,11 @@ class Exo
                 1 => 'I',
             );
             $roman_num = '';
-            if($decimal >= $roman) {
-                $roman_num .= $roman;
-                $decimal = $decimal - $roman;
+            foreach ($roman_array as $nb=> $roman) {
+                if($decimal >= $roman) {
+                    $roman_num .= $roman;
+                    $decimal = $decimal - $int;
+                }
             }
         }
         return $roman_num;
